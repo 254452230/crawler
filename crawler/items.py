@@ -15,3 +15,7 @@ class CrawlerItem(scrapy.Item):
     content = scrapy.Field()
     tag = scrapy.Field()
     similarProblem = scrapy.Field()
+    totalAccepted = scrapy.Field()
+    totalSubmission = scrapy.Field()
+    difficulty = scrapy.Field()
+    contributor = scrapy.Field()

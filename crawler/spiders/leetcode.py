@@ -3,7 +3,6 @@ import scrapy
 from scrapy.selector import Selector
 from scrapy.http import Request
 from crawler.items import CrawlerItem
-from scrapy_splash import SplashRequest
 
 class LeetcodeSpider(scrapy.Spider):
     name = 'leetcode'
@@ -135,7 +134,104 @@ class LeetcodeSpider(scrapy.Spider):
                  '/problems/serialize-and-deserialize-binary-tree','/problems/binary-tree-longest-consecutive-sequence',
                  '/problems/bulls-and-cows','/problems/longest-increasing-subsequence',
                  '/problems/remove-invalid-parentheses','/problems/smallest-rectangle-enclosing-black-pixels',
-                 '/problems/range-sum-query-immutable','/problems/range-sum-query-2d-immutable','/problems/number-of-islands-ii','/problems/additive-number','/problems/range-sum-query-mutable','/problems/range-sum-query-2d-mutable','/problems/best-time-to-buy-and-sell-stock-with-cooldown','/problems/minimum-height-trees','/problems/sparse-matrix-multiplication','/problems/burst-balloons','/problems/super-ugly-number','/problems/binary-tree-vertical-order-traversal','/problems/count-of-smaller-numbers-after-self','/problems/remove-duplicate-letters','/problems/shortest-distance-from-all-buildings','/problems/maximum-product-of-word-lengths','/problems/bulb-switcher','/problems/generalized-abbreviation','/problems/create-maximum-number','/problems/coin-change','/problems/number-of-connected-components-in-an-undirected-graph','/problems/wiggle-sort-ii','/problems/maximum-size-subarray-sum-equals-k','/problems/power-of-three','/problems/count-of-range-sum','/problems/odd-even-linked-list','/problems/longest-increasing-path-in-a-matrix','/problems/patching-array','/problems/verify-preorder-serialization-of-a-binary-tree','/problems/reconstruct-itinerary','/problems/largest-bst-subtree','/problems/increasing-triplet-subsequence','/problems/self-crossing','/problems/palindrome-pairs','/problems/house-robber-iii','/problems/counting-bits','/problems/nested-list-weight-sum','/problems/longest-substring-with-at-most-k-distinct-characters','/problems/flatten-nested-list-iterator','/problems/power-of-four','/problems/integer-break','/problems/reverse-string','/problems/reverse-vowels-of-a-string','/problems/moving-average-from-data-stream','/problems/top-k-frequent-elements','/problems/design-tic-tac-toe','/problems/intersection-of-two-arrays','/problems/intersection-of-two-arrays-ii','/problems/android-unlock-patterns','/problems/data-stream-as-disjoint-intervals','/problems/design-snake-game','/problems/russian-doll-envelopes','/problems/design-twitter','/problems/line-reflection','/problems/count-numbers-with-unique-digits','/problems/rearrange-string-k-distance-apart','/problems/logger-rate-limiter','/problems/sort-transformed-array','/problems/bomb-enemy','/problems/design-hit-counter','/problems/max-sum-of-sub-matrix-no-larger-than-k','/problems/nested-list-weight-sum-ii','/problems/water-and-jug-problem','/problems/find-leaves-of-binary-tree','/problems/valid-perfect-square','/problems/largest-divisible-subset','/problems/plus-one-linked-list','/problems/range-addition','/problems/sum-of-two-integers','/problems/super-pow','/problems/find-k-pairs-with-smallest-sums','/problems/guess-number-higher-or-lower','/problems/guess-number-higher-or-lower-ii','/problems/wiggle-subsequence','/problems/combination-sum-iv','/problems/kth-smallest-element-in-a-sorted-matrix','/problems/design-phone-directory','/problems/insert-delete-getrandom-o1','/problems/insert-delete-getrandom-o1-duplicates-allowed','/problems/linked-list-random-node','/problems/ransom-note','/problems/shuffle-an-array','/problems/mini-parser','/problems/lexicographical-numbers','/problems/first-unique-character-in-a-string','/problems/longest-absolute-file-path','/problems/find-the-difference','/problems/elimination-game','/problems/perfect-rectangle','/problems/is-subsequence','/problems/utf-8-validation','/problems/decode-string','/problems/longest-substring-with-at-least-k-repeating-characters','/problems/rotate-function','/problems/integer-replacement','/problems/random-pick-index','/problems/evaluate-division','/problems/nth-digit','/problems/binary-watch','/problems/remove-k-digits','/problems/frog-jump','/problems/sum-of-left-leaves','/problems/convert-a-number-to-hexadecimal','/problems/queue-reconstruction-by-height','/problems/trapping-rain-water-ii','/problems/valid-word-abbreviation','/problems/longest-palindrome','/problems/split-array-largest-sum','/problems/minimum-unique-word-abbreviation','/problems/fizz-buzz','/problems/arithmetic-slices','/problems/third-maximum-number','/problems/add-strings','/problems/partition-equal-subset-sum','/problems/pacific-atlantic-water-flow','/problems/sentence-screen-fitting','/problems/battleships-in-a-board','/problems/strong-password-checker','/problems/maximum-xor-of-two-numbers-in-an-array','/problems/valid-word-square','/problems/reconstruct-original-digits-from-english','/problems/longest-repeating-character-replacement','/problems/word-squares','/problems/all-oone-data-structure','/problems/number-of-segments-in-a-string','/problems/non-overlapping-intervals','/problems/find-right-interval','/problems/path-sum-iii','/problems/find-all-anagrams-in-a-string','/problems/ternary-expression-parser','/problems/k-th-smallest-in-lexicographical-order','/problems/arranging-coins','/problems/find-all-duplicates-in-an-array','/problems/sequence-reconstruction','/problems/add-two-numbers-ii','/problems/arithmetic-slices-ii-subsequence','/problems/number-of-boomerangs','/problems/find-all-numbers-disappeared-in-an-array','/problems/serialize-and-deserialize-bst','/problems/delete-node-in-a-bst','/problems/sort-characters-by-frequency','/problems/minimum-number-of-arrows-to-burst-balloons','/problems/minimum-moves-to-equal-array-elements','/problems/4sum-ii','/problems/assign-cookies','/problems/132-pattern','/problems/repeated-substring-pattern','/problems/lfu-cache','/problems/hamming-distance','/problems/minimum-moves-to-equal-array-elements-ii','/problems/island-perimeter','/problems/can-i-win','/problems/optimal-account-balancing','/problems/count-the-repetitions','/problems/unique-substrings-in-wraparound-string','/problems/validate-ip-address','/problems/convex-polygon','/problems/encode-string-with-shortest-length','/problems/concatenated-words','/problems/matchsticks-to-square','/problems/ones-and-zeroes','/problems/heaters','/problems/number-complement','/problems/total-hamming-distance','/problems/sliding-window-median','/problems/magical-string','/problems/license-key-formatting','/problems/smallest-good-base','/problems/find-permutation','/problems/max-consecutive-ones','/problems/predict-the-winner','/problems/max-consecutive-ones-ii','/problems/zuma-game','/problems/the-maze','/problems/increasing-subsequences','/problems/construct-the-rectangle','/problems/reverse-pairs','/problems/target-sum','/problems/teemo-attacking','/problems/next-greater-element-i','/problems/diagonal-traverse','/problems/the-maze-iii','/problems/keyboard-row','/problems/find-mode-in-binary-search-tree','/problems/ipo','/problems/next-greater-element-ii','/problems/base-7','/problems/the-maze-ii','/problems/relative-ranks','/problems/perfect-number','/problems/most-frequent-subtree-sum','/problems/find-bottom-left-tree-value','/problems/freedom-trail','/problems/find-largest-value-in-each-tree-row','/problems/longest-palindromic-subsequence','/problems/super-washing-machines','/problems/detect-capital','/problems/longest-uncommon-subsequence-i','/problems/longest-uncommon-subsequence-ii','/problems/continuous-subarray-sum','/problems/longest-word-in-dictionary-through-deleting','/problems/contiguous-array','/problems/beautiful-arrangement','/problems/word-abbreviation','/problems/minesweeper','/problems/minimum-absolute-difference-in-bst','/problems/lonely-pixel-i','/problems/k-diff-pairs-in-an-array','/problems/lonely-pixel-ii','/problems/encode-and-decode-tinyurl','/problems/construct-binary-tree-from-string','/problems/complex-number-multiplication','/problems/convert-bst-to-greater-tree','/problems/minimum-time-difference','/problems/reverse-string-ii','/problems/01-matrix','/problems/diameter-of-binary-tree','/problems/output-contest-matches','/problems/boundary-of-binary-tree','/problems/remove-boxes','/problems/friend-circles','/problems/split-array-with-equal-sum','/problems/binary-tree-longest-consecutive-sequence-ii','/problems/student-attendance-record-i','/problems/student-attendance-record-ii','/problems/optimal-division','/problems/brick-wall','/problems/split-concatenated-strings','/problems/next-greater-element-iii','/problems/reverse-words-in-a-string-iii','/problems/subarray-sum-equals-k','/problems/array-partition-i','/problems/longest-line-of-consecutive-one-in-matrix','/problems/binary-tree-tilt','/problems/find-the-closest-palindrome','/problems/reshape-the-matrix','/problems/permutation-in-string','/problems/maximum-vacation-days','/problems/subtree-of-another-tree','/problems/squirrel-simulation','/problems/distribute-candies','/problems/out-of-boundary-paths','/problems/shortest-unsorted-continuous-subarray','/problems/kill-process','/problems/delete-operation-for-two-strings','/problems/erect-the-fence','/problems/design-in-memory-file-system','/problems/fraction-addition-and-subtraction','/problems/valid-square','/problems/longest-harmonious-subsequence',]
+                 '/problems/range-sum-query-immutable','/problems/range-sum-query-2d-immutable',
+                 '/problems/number-of-islands-ii','/problems/additive-number','/problems/range-sum-query-mutable',
+                 '/problems/range-sum-query-2d-mutable','/problems/best-time-to-buy-and-sell-stock-with-cooldown',
+                 '/problems/minimum-height-trees','/problems/sparse-matrix-multiplication','/problems/burst-balloons',
+                 '/problems/super-ugly-number','/problems/binary-tree-vertical-order-traversal',
+                 '/problems/count-of-smaller-numbers-after-self','/problems/remove-duplicate-letters',
+                 '/problems/shortest-distance-from-all-buildings','/problems/maximum-product-of-word-lengths',
+                 '/problems/bulb-switcher','/problems/generalized-abbreviation','/problems/create-maximum-number',
+                 '/problems/coin-change','/problems/number-of-connected-components-in-an-undirected-graph',
+                 '/problems/wiggle-sort-ii','/problems/maximum-size-subarray-sum-equals-k','/problems/power-of-three',
+                 '/problems/count-of-range-sum','/problems/odd-even-linked-list',
+                 '/problems/longest-increasing-path-in-a-matrix','/problems/patching-array',
+                 '/problems/verify-preorder-serialization-of-a-binary-tree','/problems/reconstruct-itinerary',
+                 '/problems/largest-bst-subtree','/problems/increasing-triplet-subsequence','/problems/self-crossing',
+                 '/problems/palindrome-pairs','/problems/house-robber-iii','/problems/counting-bits',
+                 '/problems/nested-list-weight-sum','/problems/longest-substring-with-at-most-k-distinct-characters',
+                 '/problems/flatten-nested-list-iterator','/problems/power-of-four','/problems/integer-break',
+                 '/problems/reverse-string','/problems/reverse-vowels-of-a-string',
+                 '/problems/moving-average-from-data-stream','/problems/top-k-frequent-elements',
+                 '/problems/design-tic-tac-toe','/problems/intersection-of-two-arrays','/problems/intersection-of-two-arrays-ii',
+                 '/problems/android-unlock-patterns','/problems/data-stream-as-disjoint-intervals',
+                 '/problems/design-snake-game','/problems/russian-doll-envelopes','/problems/design-twitter',
+                 '/problems/line-reflection','/problems/count-numbers-with-unique-digits',
+                 '/problems/rearrange-string-k-distance-apart','/problems/logger-rate-limiter',
+                 '/problems/sort-transformed-array','/problems/bomb-enemy','/problems/design-hit-counter',
+                 '/problems/max-sum-of-sub-matrix-no-larger-than-k','/problems/nested-list-weight-sum-ii',
+                 '/problems/water-and-jug-problem','/problems/find-leaves-of-binary-tree','/problems/valid-perfect-square',
+                 '/problems/largest-divisible-subset','/problems/plus-one-linked-list','/problems/range-addition',
+                 '/problems/sum-of-two-integers','/problems/super-pow','/problems/find-k-pairs-with-smallest-sums',
+                 '/problems/guess-number-higher-or-lower','/problems/guess-number-higher-or-lower-ii',
+                 '/problems/wiggle-subsequence','/problems/combination-sum-iv',
+                 '/problems/kth-smallest-element-in-a-sorted-matrix','/problems/design-phone-directory',
+                 '/problems/insert-delete-getrandom-o1','/problems/insert-delete-getrandom-o1-duplicates-allowed',
+                 '/problems/linked-list-random-node','/problems/ransom-note','/problems/shuffle-an-array',
+                 '/problems/mini-parser','/problems/lexicographical-numbers','/problems/first-unique-character-in-a-string',
+                 '/problems/longest-absolute-file-path','/problems/find-the-difference','/problems/elimination-game',
+                 '/problems/perfect-rectangle','/problems/is-subsequence','/problems/utf-8-validation',
+                 '/problems/decode-string','/problems/longest-substring-with-at-least-k-repeating-characters',
+                 '/problems/rotate-function','/problems/integer-replacement','/problems/random-pick-index',
+                 '/problems/evaluate-division','/problems/nth-digit','/problems/binary-watch','/problems/remove-k-digits',
+                 '/problems/frog-jump','/problems/sum-of-left-leaves','/problems/convert-a-number-to-hexadecimal',
+                 '/problems/queue-reconstruction-by-height','/problems/trapping-rain-water-ii',
+                 '/problems/valid-word-abbreviation','/problems/longest-palindrome','/problems/split-array-largest-sum',
+                 '/problems/minimum-unique-word-abbreviation','/problems/fizz-buzz','/problems/arithmetic-slices',
+                 '/problems/third-maximum-number','/problems/add-strings','/problems/partition-equal-subset-sum',
+                 '/problems/pacific-atlantic-water-flow','/problems/sentence-screen-fitting','/problems/battleships-in-a-board',
+                 '/problems/strong-password-checker','/problems/maximum-xor-of-two-numbers-in-an-array',
+                 '/problems/valid-word-square','/problems/reconstruct-original-digits-from-english',
+                 '/problems/longest-repeating-character-replacement','/problems/word-squares',
+                 '/problems/all-oone-data-structure','/problems/number-of-segments-in-a-string',
+                 '/problems/non-overlapping-intervals','/problems/find-right-interval','/problems/path-sum-iii',
+                 '/problems/find-all-anagrams-in-a-string','/problems/ternary-expression-parser',
+                 '/problems/k-th-smallest-in-lexicographical-order','/problems/arranging-coins',
+                 '/problems/find-all-duplicates-in-an-array','/problems/sequence-reconstruction',
+                 '/problems/add-two-numbers-ii','/problems/arithmetic-slices-ii-subsequence',
+                 '/problems/number-of-boomerangs','/problems/find-all-numbers-disappeared-in-an-array',
+                 '/problems/serialize-and-deserialize-bst','/problems/delete-node-in-a-bst',
+                 '/problems/sort-characters-by-frequency','/problems/minimum-number-of-arrows-to-burst-balloons',
+                 '/problems/minimum-moves-to-equal-array-elements','/problems/4sum-ii','/problems/assign-cookies',
+                 '/problems/132-pattern','/problems/repeated-substring-pattern','/problems/lfu-cache',
+                 '/problems/hamming-distance','/problems/minimum-moves-to-equal-array-elements-ii',
+                 '/problems/island-perimeter','/problems/can-i-win','/problems/optimal-account-balancing',
+                 '/problems/count-the-repetitions','/problems/unique-substrings-in-wraparound-string',
+                 '/problems/validate-ip-address','/problems/convex-polygon','/problems/encode-string-with-shortest-length',
+                 '/problems/concatenated-words','/problems/matchsticks-to-square','/problems/ones-and-zeroes',
+                 '/problems/heaters','/problems/number-complement','/problems/total-hamming-distance',
+                 '/problems/sliding-window-median','/problems/magical-string','/problems/license-key-formatting',
+                 '/problems/smallest-good-base','/problems/find-permutation','/problems/max-consecutive-ones',
+                 '/problems/predict-the-winner','/problems/max-consecutive-ones-ii','/problems/zuma-game',
+                 '/problems/the-maze','/problems/increasing-subsequences','/problems/construct-the-rectangle',
+                 '/problems/reverse-pairs','/problems/target-sum','/problems/teemo-attacking',
+                 '/problems/next-greater-element-i','/problems/diagonal-traverse','/problems/the-maze-iii',
+                 '/problems/keyboard-row','/problems/find-mode-in-binary-search-tree','/problems/ipo',
+                 '/problems/next-greater-element-ii','/problems/base-7','/problems/the-maze-ii','/problems/relative-ranks',
+                 '/problems/perfect-number','/problems/most-frequent-subtree-sum','/problems/find-bottom-left-tree-value',
+                 '/problems/freedom-trail','/problems/find-largest-value-in-each-tree-row',
+                 '/problems/longest-palindromic-subsequence','/problems/super-washing-machines','/problems/detect-capital',
+                 '/problems/longest-uncommon-subsequence-i','/problems/longest-uncommon-subsequence-ii',
+                 '/problems/continuous-subarray-sum','/problems/longest-word-in-dictionary-through-deleting',
+                 '/problems/contiguous-array','/problems/beautiful-arrangement','/problems/word-abbreviation',
+                 '/problems/minesweeper','/problems/minimum-absolute-difference-in-bst','/problems/lonely-pixel-i',
+                 '/problems/k-diff-pairs-in-an-array','/problems/lonely-pixel-ii','/problems/encode-and-decode-tinyurl',
+                 '/problems/construct-binary-tree-from-string','/problems/complex-number-multiplication',
+                 '/problems/convert-bst-to-greater-tree','/problems/minimum-time-difference','/problems/reverse-string-ii',
+                 '/problems/01-matrix','/problems/diameter-of-binary-tree','/problems/output-contest-matches',
+                 '/problems/boundary-of-binary-tree','/problems/remove-boxes','/problems/friend-circles',
+                 '/problems/split-array-with-equal-sum','/problems/binary-tree-longest-consecutive-sequence-ii',
+                 '/problems/student-attendance-record-i','/problems/student-attendance-record-ii','/problems/optimal-division',
+                 '/problems/brick-wall','/problems/split-concatenated-strings','/problems/next-greater-element-iii',
+                 '/problems/reverse-words-in-a-string-iii','/problems/subarray-sum-equals-k','/problems/array-partition-i',
+                 '/problems/longest-line-of-consecutive-one-in-matrix','/problems/binary-tree-tilt',
+                 '/problems/find-the-closest-palindrome','/problems/reshape-the-matrix','/problems/permutation-in-string',
+                 '/problems/maximum-vacation-days','/problems/subtree-of-another-tree','/problems/squirrel-simulation',
+                 '/problems/distribute-candies','/problems/out-of-boundary-paths',
+                 '/problems/shortest-unsorted-continuous-subarray','/problems/kill-process',
+                 '/problems/delete-operation-for-two-strings','/problems/erect-the-fence',
+                 '/problems/design-in-memory-file-system','/problems/fraction-addition-and-subtraction',
+                 '/problems/valid-square','/problems/longest-harmonious-subsequence',]
         for site in sites:
             url = "https://leetcode.com" + site
             item = CrawlerItem()
@@ -144,8 +240,12 @@ class LeetcodeSpider(scrapy.Spider):
 
     def parse_item(self, response):
         item = response.meta['item']
-        item['title'] = Selector(response).xpath('//title/text()').extract()[0]
+        item['title'] = ''.join(Selector(response).xpath('/html/body/div[1]/div[4]/div/div/div[1]/h3/text()').extract())
         item['content'] = ''.join(Selector(response).xpath('//div[@class="question-content"]/node()').extract())
-        item['tag'] = Selector(response).xpath('//*[@id="descriptionContent"]/div[1]/div[2]/div[2]/span').extract()
-        item['similarProblem'] = Selector(response).xpath('//*[@id="descriptionContent"]/div[1]/div[2]/div[3]/span').extract()
+        item['tag'] = ''.join(Selector(response).xpath('//*[@id="descriptionContent"]/div[1]/div[2]/div[2]/span').extract())
+        item['similarProblem'] = ''.join(Selector(response).xpath('//*[@id="descriptionContent"]/div[1]/div[2]/div[3]/span').extract())
+        item['totalAccepted'] = ''.join(Selector(response).xpath('//*[@id="descriptionContent"]/div[1]/div[1]/ul/li[1]/strong').extract())
+        item['totalSubmission'] = ''.join(Selector(response).xpath('//*[@id="descriptionContent"]/div[1]/div[1]/ul/li[2]/strong').extract())
+        item['difficulty'] = ''.join(Selector(response).xpath('//*[@id="descriptionContent"]/div[1]/div[1]/ul/li[3]/strong').extract())
+        item['contributor'] = ''.join(Selector(response).xpath('//*[@id="descriptionContent"]/div[1]/div[1]/ul/li[4]/strong').extract())
         return item

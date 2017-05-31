@@ -1,0 +1,5 @@
+var url;
+$(".reactable-data").find("tr").each(function(){ 
+	url += '\''+$(this).find('a').attr('href')+'\',';
+})
+console.log(url);
