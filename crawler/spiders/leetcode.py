@@ -231,7 +231,7 @@ class LeetcodeSpider(scrapy.Spider):
                  '/problems/shortest-unsorted-continuous-subarray','/problems/kill-process',
                  '/problems/delete-operation-for-two-strings','/problems/erect-the-fence',
                  '/problems/design-in-memory-file-system','/problems/fraction-addition-and-subtraction',
-                 '/problems/valid-square','/problems/longest-harmonious-subsequence',]
+                 '/problems/valid-square','/problems/longest-harmonious-subsequence']
         for site in sites:
             url = "https://leetcode.com" + site
             item = CrawlerItem()
@@ -242,8 +242,8 @@ class LeetcodeSpider(scrapy.Spider):
         item = response.meta['item']
         item['title'] = ''.join(Selector(response).xpath('/html/body/div[1]/div[4]/div/div/div[1]/h3/text()').extract())
         item['content'] = ''.join(Selector(response).xpath('//div[@class="question-content"]/node()').extract())
-        item['tag'] = ''.join(Selector(response).xpath('//*[@id="descriptionContent"]/div[1]/div[2]/div[2]/span').extract())
-        item['similarProblem'] = ''.join(Selector(response).xpath('//*[@id="descriptionContent"]/div[1]/div[2]/div[3]/span').extract())
+        item['tag'] = ''.join(Selector(response).xpath('//*[@id="tags"]/following-sibling::span').extract())
+        item['similarProblem'] = ''.join(Selector(response).xpath('//*[@id="similar"]/following-sibling::span').extract())
         item['totalAccepted'] = ''.join(Selector(response).xpath('//*[@id="descriptionContent"]/div[1]/div[1]/ul/li[1]/strong').extract())
         item['totalSubmission'] = ''.join(Selector(response).xpath('//*[@id="descriptionContent"]/div[1]/div[1]/ul/li[2]/strong').extract())
         item['difficulty'] = ''.join(Selector(response).xpath('//*[@id="descriptionContent"]/div[1]/div[1]/ul/li[3]/strong').extract())
